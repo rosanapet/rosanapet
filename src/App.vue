@@ -1,28 +1,189 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <header>
+      <div class="title">
+        <h1>{{ title }}</h1>
+      </div>
+    </header>
+
+    <main>
+
+      <div class="cp-carrousel">
+        <b-carousel
+                id="carousel-fade"
+                style="text-shadow: 0px 0px 2px #000"
+                fade
+                indicators
+                img-width="600px"
+                img-height="280px"
+        >
+          <b-carousel-slide class="cp-carrousel-item"
+                  caption="First slide"
+                  img-src="1.jpg"
+          >
+
+          </b-carousel-slide>
+          <b-carousel-slide
+                  caption="Second Slide"
+                  img-src="2.jpg"
+          ></b-carousel-slide>
+          <b-carousel-slide
+                  caption="Third Slide"
+                  img-src="3.jpg"
+          ></b-carousel-slide>
+        </b-carousel>
+      </div>
+
+     
+
+    </main>
+
+    <footer>
+      <a href="https://wa.me/5511997862895" target="_blank" class="cp-contact whatsapp">(11) 99786 2895 <i class="fa fa-whatsapp"></i></a>
+      <a class="cp-contact gmail">rosanapolito@gmail.com <i class="fa fa-google"></i></a>
+    </footer>
+
+    <nav class="left">
+  
+      <div v-for="service in services" :key="service.titile">
+        <Card :service="service"/>
+      </div>
+      
+    </nav>
+
+    <nav class="right">
+
+    </nav>
+
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
+  import Card from './components/Card'
+  
+  export default {
   name: 'app',
   components: {
-    HelloWorld
+    Card
+  },
+  data() {
+    return {
+      title: 'Rosana, passeios e cuidados de pets.',
+      message: '',
+      showMessage: false,
+      preventShow: true,
+      services : [
+        {
+          titile: 'Pet Sitter',
+          description: 'Vai viajar e não tem com quem deixar o seu bichinho? ' +
+            'Agora você pode contar com o serviço de Pet Sitter',
+          img: 'pet-sitter.jpeg'
+        },
+        {
+          titile: 'Dog Walker',
+          description: 'Lhe falta tempo para passear com o seu cãozinho?' +
+            'Agora você pode contar com serviço de Dog Walker',
+          img: 'dog-walker.jpeg'
+        },
+        {
+          titile: 'Cuidados',
+          description: 'Companhia, passeios e cuidados em geral para seu animalzinho de estimação.',
+          img: 'cuidados.jpeg'
+        }
+      ]
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+
+
+
+  #app {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(145,145,209,0.11948529411764708) 27%, rgba(0,212,255,1) 100%);
+  }
+
+  .cp-carrousel{
+    margin: 40px 40px;
+    width: 550px;
+    /*width: 50%;*/
+  }
+
+  .cp-contact {
+    margin: 20px 50px;
+    border-radius: 10px;
+    width: 250px;
+    display: block;
+    text-align: center;
+    line-height: 60px;
+  }
+
+  .whatsapp {
+    background: #25d366;
+  }
+  
+  .gmail {
+    background: indianred;
+  }
+
+  p {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  header {
+    grid-area: grid-header;
+  }
+
+  nav.left {
+    grid-area: grid-nav-left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav.right {
+    grid-area: grid-nav-right;
+  }
+
+  main {
+    grid-area: grid-main;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  header div.title {
+    display: flex;
+    justify-content: center;
+    margin: 50px 10px 50px 10px;
+    font-family: 'Indie Flower', cursive;
+  }
+
+  footer {
+    grid-area: grid-footer;
+    background: #343a40;
+    display: flex;
+    justify-content: center;
+  }
+
+  #app {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 250px 1fr 250px;
+    grid-template-rows: 120px 1fr 100px;
+    grid-template-areas:
+            'grid-header grid-header grid-header'
+            'grid-nav-left grid-main grid-nav-right'
+            'grid-footer grid-footer grid-footer';
+    /*overflow-x: hidden;*/
+  }
+
+
 </style>
