@@ -11,33 +11,16 @@
     <main>
 
       <div class="cp-carrousel">
-        <b-carousel
-                id="carousel-fade"
-                style="text-shadow: 0px 0px 2px #000"
-                fade
-                indicators
-                img-width="600px"
-                img-height="280px"
-        >
-          <b-carousel-slide class="cp-carrousel-item"
-                  caption="First slide"
-                  img-src="1.jpg"
-          >
-
-          </b-carousel-slide>
-          <b-carousel-slide
-                  caption="Second Slide"
-                  img-src="2.jpg"
-          ></b-carousel-slide>
-          <b-carousel-slide
-                  caption="Third Slide"
-                  img-src="3.jpg"
-          ></b-carousel-slide>
+        <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 2px #000" fade indicators>
+          <b-carousel-slide class="cp-carrousel-item" caption="1" img-src="images/1.png"/>
+          <b-carousel-slide class="cp-carrousel-item" caption="2" img-src="images/2.png"/>
+          <b-carousel-slide class="cp-carrousel-item" caption="3" img-src="images/3.png"/>
+          <b-carousel-slide class="cp-carrousel-item" caption="4" img-src="images/4.png"/>
+          <b-carousel-slide class="cp-carrousel-item" caption="5" img-src="images/5.png"/>
+          <b-carousel-slide class="cp-carrousel-item" caption="6" img-src="images/6.png"/>
         </b-carousel>
       </div>
-
-     
-
+      
     </main>
 
     <footer>
@@ -46,17 +29,14 @@
     </footer>
 
     <nav class="left">
-  
       <div v-for="service in services" :key="service.titile">
         <Card :service="service"/>
       </div>
-      
     </nav>
 
     <nav class="right">
 
     </nav>
-
 
   </div>
 </template>
@@ -65,43 +45,44 @@
   import Card from './components/Card'
   
   export default {
-  name: 'app',
-  components: {
-    Card
-  },
-  data() {
-    return {
-      title: 'Rosana, passeios e cuidados de pets.',
-      message: '',
-      showMessage: false,
-      preventShow: true,
-      services : [
-        {
-          titile: 'Pet Sitter',
-          description: 'Vai viajar e não tem com quem deixar o seu bichinho? ' +
-            'Agora você pode contar com o serviço de Pet Sitter',
-          img: 'pet-sitter.jpeg'
-        },
-        {
-          titile: 'Dog Walker',
-          description: 'Lhe falta tempo para passear com o seu cãozinho?' +
-            'Agora você pode contar com serviço de Dog Walker',
-          img: 'dog-walker.jpeg'
-        },
-        {
-          titile: 'Cuidados',
-          description: 'Companhia, passeios e cuidados em geral para seu animalzinho de estimação.',
-          img: 'cuidados.jpeg'
-        }
-      ]
+    name: 'app',
+    components: {
+      Card
+    },
+    data() {
+      return {
+        title: 'Rosana, passeios e cuidados de pets.',
+        message: '',
+        showMessage: false,
+        preventShow: true,
+        services : [
+          {
+            titile: 'Pet Sitter',
+            description: 'Vai viajar e não tem com quem deixar o seu bichinho? ' +
+              'Agora você pode contar com o serviço de Pet Sitter',
+              img: 'pet-sitter.jpeg'
+          },
+          {
+            titile: 'Dog Walker',
+            description: 'Lhe falta tempo para passear com o seu cãozinho?' +
+              'Agora você pode contar com serviço de Dog Walker',
+            img: 'dog-walker.jpeg'
+          },
+          {
+            titile: 'Cuidados',
+            description: 'Amor, carinho, companhia, passeios e cuidados em geral para seu animalzinho de estimação.',
+            img: 'cuidados.jpeg'
+          }
+        ]
+      }
+    },
+    created() {
+      // document.title = 'ROSANA PET'
     }
   }
-}
 </script>
 
 <style scoped>
-
-
 
   #app {
     background: rgb(2,0,36);
@@ -110,8 +91,7 @@
 
   .cp-carrousel{
     margin: 40px 40px;
-    width: 550px;
-    /*width: 50%;*/
+    height: 400px;
   }
 
   .cp-contact {
@@ -176,13 +156,39 @@
   #app {
     display: grid;
     min-height: 100vh;
-    grid-template-columns: 250px 1fr 250px;
+    grid-template-columns: 250px auto 250px;
     grid-template-rows: 120px 1fr 100px;
     grid-template-areas:
             'grid-header grid-header grid-header'
             'grid-nav-left grid-main grid-nav-right'
             'grid-footer grid-footer grid-footer';
     /*overflow-x: hidden;*/
+  }
+
+  @media (max-width: 950px) {
+    #app {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 100%;
+      grid-template-rows: 100px 1fr 0.5fr 1fr 100px;
+      grid-template-areas:
+          'grid-header'
+          'grid-main'
+          'grid-nav-right'
+          'grid-nav-left'
+          'grid-footer';
+      /*overflow-x: hidden;*/
+    }
+    .cp-carrousel{
+      margin: 80px 80px;
+    }
+    header div.title {
+      display: flex;
+      justify-content: center;
+      margin: 50px 50px 50px 50px;
+      font-family: 'Indie Flower', cursive;
+    }
+  
   }
 
 

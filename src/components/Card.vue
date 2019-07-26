@@ -27,12 +27,14 @@
     },
     methods: {
       openMessage() {
+        if(this.showMessage)
+          return
         this.$refs.el.classList.add('cp-selected')
         this.showMessage = true
+        setTimeout(() => { this.showMessage = false }, 3000)
       },
       closeMessage() {
         this.$refs.el.classList.remove('cp-selected')
-        this.showMessage = false
       }
     }
     
@@ -92,6 +94,13 @@
     left: 50%;
     transition: 1s ease-out;
     opacity: 0.9;
+  }
+
+  @media (max-width: 950px) {
+    .cp-message{
+      height: 70%;
+      top: 40%;
+    }
   }
 
 </style>
