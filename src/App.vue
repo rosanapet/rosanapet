@@ -12,12 +12,12 @@
 
       <div class="cp-carrousel">
         <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 2px #000" fade indicators>
-          <b-carousel-slide class="cp-carrousel-item" caption="1" img-src="images/1.png"/>
-          <b-carousel-slide class="cp-carrousel-item" caption="2" img-src="images/2.png"/>
-          <b-carousel-slide class="cp-carrousel-item" caption="3" img-src="images/3.png"/>
-          <b-carousel-slide class="cp-carrousel-item" caption="4" img-src="images/4.png"/>
-          <b-carousel-slide class="cp-carrousel-item" caption="5" img-src="images/5.png"/>
-          <b-carousel-slide class="cp-carrousel-item" caption="6" img-src="images/6.png"/>
+          <b-carousel-slide class="cp-carrousel-item" caption="1" :img-src="require('./images/1.png')"/>
+          <b-carousel-slide class="cp-carrousel-item" caption="2" :img-src="require('./images/2.png')"/>
+          <b-carousel-slide class="cp-carrousel-item" caption="3" :img-src="require('./images/3.png')"/>
+          <b-carousel-slide class="cp-carrousel-item" caption="4" :img-src="require('./images/4.png')"/>
+          <b-carousel-slide class="cp-carrousel-item" caption="5" :img-src="require('./images/5.png')"/>
+          <b-carousel-slide class="cp-carrousel-item" caption="6" :img-src="require('./images/6.png')"/>
         </b-carousel>
       </div>
       
@@ -60,18 +60,18 @@
             titile: 'Pet Sitter',
             description: 'Vai viajar e não tem com quem deixar o seu bichinho? ' +
               'Agora você pode contar com o serviço de Pet Sitter',
-              img: 'pet-sitter.jpeg'
+              img: require('./images/pet-sitter.jpeg')
           },
           {
             titile: 'Dog Walker',
             description: 'Lhe falta tempo para passear com o seu cãozinho?' +
               'Agora você pode contar com serviço de Dog Walker',
-            img: 'dog-walker.jpeg'
+            img: require('./images/dog-walker.jpeg')
           },
           {
             titile: 'Cuidados',
             description: 'Amor, carinho, companhia, passeios e cuidados em geral para seu animalzinho de estimação.',
-            img: 'cuidados.jpeg'
+            img: require('./images/cuidados.jpeg')
           }
         ]
       }
@@ -90,6 +90,7 @@
   }
 
   .cp-carrousel{
+    max-width: 600px;
     margin: 40px 40px;
     height: 400px;
   }
