@@ -11,21 +11,21 @@
     <main>
 
       <div class="cp-carrousel">
-        <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 2px #000" fade indicators>
-          <b-carousel-slide class="cp-carrousel-item" caption="1" :img-src="require('./images/1.png')"/>
-          <b-carousel-slide class="cp-carrousel-item" caption="2" :img-src="require('./images/2.png')"/>
-          <b-carousel-slide class="cp-carrousel-item" caption="3" :img-src="require('./images/3.png')"/>
-          <b-carousel-slide class="cp-carrousel-item" caption="4" :img-src="require('./images/4.png')"/>
-          <b-carousel-slide class="cp-carrousel-item" caption="5" :img-src="require('./images/5.png')"/>
-          <b-carousel-slide class="cp-carrousel-item" caption="6" :img-src="require('./images/6.png')"/>
+        <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 2px #000" fade indicators img-width=1024 img-height=480>
+          <b-carousel-slide caption="1" :img-src="require('./images/1.png')"/>
+          <b-carousel-slide caption="2" :img-src="require('./images/2.png')"/>
+          <b-carousel-slide caption="3" :img-src="require('./images/3.png')"/>
+          <b-carousel-slide caption="4" :img-src="require('./images/4.png')"/>
+          <b-carousel-slide caption="5" :img-src="require('./images/5.png')"/>
+          <b-carousel-slide caption="6" :img-src="require('./images/6.png')"/>
         </b-carousel>
       </div>
       
     </main>
 
     <footer>
-      <a href="https://wa.me/5511997862895" target="_blank" class="cp-contact whatsapp">(11) 99786 2895 <i class="fa fa-whatsapp"></i></a>
-      <a class="cp-contact gmail">rosanapolito@gmail.com <i class="fa fa-google"></i></a>
+      <a class="cp-contact whatsapp text-nowrap" href="https://wa.me/5511997862895" target="_blank">(11) 99786 2895 <i class="fa fa-whatsapp"></i></a>
+      <a class="cp-contact gmail text-nowrap">rosanapolito@gmail.com <i class="fa fa-google"></i></a>
     </footer>
 
     <nav class="left">
@@ -35,7 +35,6 @@
     </nav>
 
     <nav class="right">
-
     </nav>
 
   </div>
@@ -171,11 +170,10 @@
       display: grid;
       width: 100%;
       grid-template-columns: 100%;
-      grid-template-rows: 100px 1fr 0.5fr 1fr 100px;
+      grid-template-rows: 15% 1fr 1fr 5%;
       grid-template-areas:
           'grid-header'
           'grid-main'
-          'grid-nav-right'
           'grid-nav-left'
           'grid-footer';
       /*overflow-x: hidden;*/
@@ -188,6 +186,11 @@
       justify-content: center;
       margin: 50px 50px 50px 50px;
       font-family: 'Indie Flower', cursive;
+    }
+  
+    .cp-contact {
+      margin: 5px 5px;
+      width: auto;
     }
   
   }

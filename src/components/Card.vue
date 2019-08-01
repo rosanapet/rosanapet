@@ -1,7 +1,7 @@
 <template>
   <div id="card">
     <div class="cp-border">
-      <div  class="cp-div-img" @mouseover="openMessage" @mouseout="closeMessage" ref="el">
+      <div  class="cp-div-img" @mouseover="openMessage" ref="el">
         <img :src="service.img" alt="">
       </div>
     </div>
@@ -31,10 +31,10 @@
           return
         this.$refs.el.classList.add('cp-selected')
         this.showMessage = true
-        setTimeout(() => { this.showMessage = false }, 3000)
-      },
-      closeMessage() {
-        this.$refs.el.classList.remove('cp-selected')
+        setTimeout(() => {
+          this.showMessage = false
+          this.$refs.el.classList.remove('cp-selected')
+        }, 8000)
       }
     }
     
@@ -84,8 +84,8 @@
   }
 
   .slide-enter, .slide-leave-to {
-    position: fixed;
-    left: 150%;
+    /*position: fixed;*/
+    left: -150%;
     transition: 1s ease-out;
     opacity: 0;
   }
@@ -98,8 +98,8 @@
 
   @media (max-width: 950px) {
     .cp-message{
-      height: 70%;
-      top: 40%;
+      height: 90%;
+      position: fixed;
     }
   }
 

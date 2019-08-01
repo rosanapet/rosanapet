@@ -7890,6 +7890,11 @@ vue-functional-data-merge@^3.1.0:
   resolved "https://registry.yarnpkg.com/vue-functional-data-merge/-/vue-functional-data-merge-3.1.0.tgz#08a7797583b7f35680587f8a1d51d729aa1dc657"
   integrity sha512-leT4kdJVQyeZNY1kmnS1xiUlQ9z1B/kdBFCILIjYYQDqZgLqCLa0UhjSSeRX6c3mUe6U5qYeM8LrEqkHJ1B4LA==
 
+vue-head@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/vue-head/-/vue-head-2.1.2.tgz#ad3c39f464e3960042b064c00e4739674e61e291"
+  integrity sha512-rE9IOe6pxmMy9nXVTobkByA7l3SUQf29I5fNy0WtfL5AxJ7vLXq3sL+CCtARwiZi/WJZyy32MgsoRbeDsanqhg==
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
