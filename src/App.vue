@@ -18,6 +18,12 @@
           <b-carousel-slide caption="4" :img-src="require('./images/4.png')"/>
           <b-carousel-slide caption="5" :img-src="require('./images/5.png')"/>
           <b-carousel-slide caption="6" :img-src="require('./images/6.png')"/>
+          <b-carousel-slide caption="7" :img-src="require('./images/7.png')"/>
+          <b-carousel-slide caption="8" :img-src="require('./images/8.png')"/>
+          <b-carousel-slide caption="9" :img-src="require('./images/9.png')"/>
+          <b-carousel-slide caption="10" :img-src="require('./images/10.png')"/>
+          <b-carousel-slide caption="11" :img-src="require('./images/11.png')"/>
+          <b-carousel-slide caption="12" :img-src="require('./images/12.png')"/>
         </b-carousel>
       </div>
       
